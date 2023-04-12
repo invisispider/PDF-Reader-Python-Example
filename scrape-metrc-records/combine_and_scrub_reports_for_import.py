@@ -4,7 +4,8 @@ import re
 import pandas as pd
 from datetime import datetime
 
-folder = r'C:/Users/attwe/Downloads/Metrc Exports'+'\\'
+# UPDATE WITH FOLDER PATH
+folder = r'<PATH>/Metrc Exports'+'\\'
 file_list = os.listdir(folder)
 os.chdir('convert')
 
