@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Show{% endblock title %}
+
+
+{% block content %}
+	<table class="table table-warning table-striped table-responsive table-hover table-bordered">
+		{% for user in user_list %}
+			<tr><td>{{ user }}</td></tr>
+		{% endfor %}	
+	</table>
+{% endblock content %}
