@@ -8,12 +8,12 @@ import sys
 
 # RUN COA_RENAMER FIRST IF THEY HAVEN'T BEEN NAMED THEIR SAMPLE ID
 
-# FIRST STEP: RUN POWERAUTOMATE SCRIPT TO CONVERT PDFS TO TEXT
-# KEEP THEM IN THE SAME 'DUMMY' FOLDER WITH THE REGULAR PDFS.
+# FIRST STEP: RUN SCRIPT TO CONVERT PDFS TO TEXT
+# KEEP THEM IN THE SAME FOLDER WITH THE REGULAR PDFS.
 
 
 def get_strain(field):
-    file_path = "C:\\Users\\attwe\\PycharmProjects\\PDFScrape\\coas\\dummy\\"
+    file_path = "<your_input_folder>"
     with io.open(file_path + 'strains.txt', 'r') as strains:
         for strain in strains:
             field = field.lower()
@@ -201,13 +201,13 @@ def get_data_viridis(coa):
     return r
 
 
-file_path = "C:\\Users\\attwe\\PycharmProjects\\PDFScrape\\coas\\dummy\\"
+file_path = "<your_input_folder>"
 
 all_files = [f for f in listdir(file_path) if isfile(join(file_path, f))]
 
 
 
-with open("C:\\Users\\attwe\\PycharmProjects\\PDFScrape\\column_heads_list.txt", "r") as headers:
+with open("<path>/column_heads_list.txt", "r") as headers:
     csv_headers = headers.readline()
 
 # ALL THE COAS IN THE 'DUMMY' FOLDER
@@ -237,5 +237,5 @@ columnar_df = pd.DataFrame(columns=new_headers)
 df = columnar_df.append(results_df)
 df.to_csv('big_dataframe.csv')
 print(str(i)+'coas successfully built to csv')
-print(r'Output saved to PycharmProjects\PDFScrape\big_dataframe.csv')
+print(r'Output saved to <output_path>\big_dataframe.csv')
 print(r'for some reason, you\'ll have to go into the output sheet and copy values with strain column')
