@@ -1,2 +1,0 @@
-my_username=<MY_METRC_USER>
-my_password=<MY_METRC_PW>
