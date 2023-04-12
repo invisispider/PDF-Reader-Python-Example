@@ -321,14 +321,6 @@ def get_data_cambium(coa):
             line=line.replace(string,'')
             r['cannabinoids_d8_thc'] = line if 'ND' not in line else '0.00%'
 
-        ##################################################
-#         [2022-02-08T15:49:49-0500] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: bfa
-# [2022-02-08T15:49:49-0500] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: qed
-# [2022-02-08T15:49:49-0500] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: qla1280
-# [2022-02-08T15:49:50-0500] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: qla2xxx
-# [2022-02-08T15:49:50-0500] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: wd719x --ext hd? installed
-# [2022-02-08T15:49:51-0500] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: xhci_pci --usb
-        ##################################################
 
         # TERPENES
         string = 'TRANS-NEROLIDOL '
@@ -419,8 +411,6 @@ def get_data_cambium(coa):
         if line.startswith(string):
             r['terpenes_terpinolene'] = terps_starts(line, string)
 
-        ##################################################
-        ##################################################
 
         # # MICROBIALS AND HEAVY METALS
         string = 'WATER ACTIVITY 0.65Aw '
@@ -573,8 +563,6 @@ def get_data_cambium(coa):
             r['cannabinoids_total'] = percent_handler(line.replace('TOTAL CANNABINOIDS: ', ''))
 
     return r
-
-
 
 
 ##############################################################
