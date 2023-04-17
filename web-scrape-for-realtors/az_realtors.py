@@ -12,8 +12,8 @@ spreadsheet = pd.read_csv('AZZipcodes.csv').values
 # 		zipcode_list.append(v)
 
 zipcode_list = {[[v for v in value] for value in omg] for omg in spreadsheet}
-print(zipcode_list)
-exit()
+# print(zipcode_list)
+# exit()
 agents = []
 
 def getAgentInfo(agent_card):
